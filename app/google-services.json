@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "981237637578",
+    "firebase_url": "https://vegetables-5423b.firebaseio.com",
+    "project_id": "vegetables-5423b",
+    "storage_bucket": "vegetables-5423b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981237637578:android:13c3c6a65bcbec53",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981237637578-kosbksl7k848gu5uh75flcc5kb7mammq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0VA4IGlZPK0TCmrNOgkfYSs4AqSnYkIM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

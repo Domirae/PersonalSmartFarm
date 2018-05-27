@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication.CalendarActivity"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:background="#FFC19E"
+    sothree:umanoPanelHeight="68dp"
+    sothree:umanoShadowHeight="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/button"
+            android:layout_width="288dp"
+            android:layout_height="47dp"
+            android:text="작물등록"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+             />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="85dp"
+            android:layout_height="47dp"
+            android:text="재배완료"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBack"
+                android:drawableTop="@drawable/humidity"
+                android:text="HUM" />
+
+            <Button
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBack"
+                android:drawableTop="@drawable/thermometer"
+                android:text="TEM" />
+
+            <Button
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBack"
+                android:drawableTop="@drawable/ph_meter"
+                android:text="PH" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/foreGrowth_tv"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:text="예상 재배기간:"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/todayWea_tv"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="오늘날씨:"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/todayRain_tv"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="예상 강수량:"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/todayTem_tv"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="현재시간 온도 : "
+                android:layout_weight="1"
+                />
+
+            <TextView
+                android:id="@+id/todayHum_tv"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="오늘 습도 : "
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="현재 하우스 온도값: ?"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="현재 하우스 습도값 : ?"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:background="#FFF"
+            android:id="@+id/login_text"
+            android:layout_gravity="center"
+            android:text="로그인을 해주세요"
+            android:padding="10dp"/>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:stretchColumns="*"
+                android:background="#F29A64"
+                >
+                <TableRow
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <Button
+                        android:id="@+id/button3"
+                        android:background="@color/colorBack"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableTop="@drawable/calendar"
+                        android:layout_margin="30dp"
+                        android:text="Calendar"
+                        />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/colorBack"
+                        android:drawableTop="@drawable/lens"
+                        android:layout_margin="30dp"
+                        android:text="Monitor" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/colorBack"
+                        android:drawableTop="@drawable/gardener"
+                        android:layout_margin="30dp"
+                        android:text="ChatBot" />
+                </TableRow>
+                <TableRow
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:background="@color/colorBack"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableLeft="@drawable/login"
+
+                        android:text="Login"
+                        />
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/colorBack"
+                        android:drawableLeft="@drawable/logout"
+                        android:text="Logout" />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+
