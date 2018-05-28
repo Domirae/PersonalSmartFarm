@@ -52,7 +52,6 @@ public class RegActivity extends AppCompatActivity {
 
     //서버 통신을 위한 변수들 --> 연결하고자 하는 파일?
     private static final String TAG = "RegActivity";
-
     User app_user;
 
     //요청 url
@@ -107,6 +106,9 @@ public class RegActivity extends AppCompatActivity {
                 if(vetName!=null){
                     GetData task_registerUserveg= new GetData();
                     task_registerUserveg.execute(registerUserveg_url+vetName.getText().toString()+"&userid="+userName+"&growth_start="+growth_start);
+                    app_user.setFruit(vetName.getText().toString());
+                    app_user.setGrowth_span(fdate);
+
                     showMessage_register();
                 }
                 else{
@@ -148,31 +150,28 @@ public class RegActivity extends AppCompatActivity {
         //restoreState();
         //만약 정보가 리셋되어있다면 텍스트 역시 리셋
         if(app_user.getFruit()==null){
-
             vetName.setText("None");
             tvResult.setText("");
         }
-
     }
 
-    protected void saveState(){
-        SharedPreferences pref=getSharedPreferences("pref",Activity.MODE_PRIVATE);
-        SharedPreferences.Editor editor=pref.edit();
-        editor.putString("searchFruit",vetName.getText().toString());
-        editor.putString("searchInfor",tvResult.getText().toString());
-        editor.commit();
-    }
+//    protected void saveState(){
+//        SharedPreferences pref=getSharedPreferences("pref",Activity.MODE_PRIVATE);
+//        SharedPreferences.Editor editor=pref.edit();
+//        editor.putString("searchFruit",vetName.getText().toString());
+//        editor.putString("searchInfor",tvResult.getText().toString());
+//        editor.commit();
+//    }
 
-    protected void restoreState(){
-        SharedPreferences pref=getSharedPreferences("pref",Activity.MODE_PRIVATE);
-        if((pref!=null)&&(pref.contains("searchFruit"))&&(pref.contains("searchInfor"))){
-            String searchFruit=pref.getString("searchFruit","");
-            vetName.setText(searchFruit);
-            String searchInfor=pref.getString("searchInfor","");
-            tvResult.setText(searchInfor);
-        }
-    }
-
+//    protected void restoreState(){
+//        SharedPreferences pref=getSharedPreferences("pref",Activity.MODE_PRIVATE);
+//        if((pref!=null)&&(pref.contains("searchFruit"))&&(pref.contains("searchInfor"))){
+//            String searchFruit=pref.getString("searchFruit","");
+//            vetName.setText(searchFruit);
+//            String searchInfor=pref.getString("searchInfor","");
+//            tvResult.setText(searchInfor);
+//        }
+//    }
 
     //체크박스로 구성된 채소 선택
     private void DialogRadio(){
@@ -199,7 +198,6 @@ public class RegActivity extends AppCompatActivity {
         });
         AlertDialog dialog = alertDialogBuilder.create();
         dialog.show();
-
     }
 
     private void showMessage_information() {
@@ -257,12 +255,9 @@ public class RegActivity extends AppCompatActivity {
         Intent reg_intent=new Intent(getApplicationContext(),MainActivity.class);
 
         reg_intent.putExtra("date",fdate);
-        reg_intent.putExtra("fruit",name);
-        reg_intent.putExtra("reg",today_register);
-
+        reg_intent.putExtra("app_user",app_user);
         setResult(RESULT_OK,reg_intent);
 
-        //토마토 설정후 토마토를 띄우게 하는 부분 --> 미해결 부분
         bSearch.setHint(bSearch.getText().toString());
         finish();
     }

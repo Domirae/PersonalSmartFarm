@@ -275,7 +275,6 @@ public class JoinActivity extends Activity {
                     break ;
             } //스위치 끝
 
-
         }
 
     }

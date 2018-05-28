@@ -122,13 +122,11 @@ public class CalendarActivity extends AppCompatActivity {
         //***캘린더에 표시하기 -> 메인에서 전달된 내용을 받아와 처리한다.
         Intent intent = getIntent();
         if (intent != null) {
-
             app_user = (User)intent.getSerializableExtra("app_user");
             String date = intent.getStringExtra("date");
             growthDay=Integer.parseInt(app_user.getGrowth_span());
 
             try{
-
                 String start_day = app_user.getStart_date();
                 SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
                 calendarOriginDate.setTime(transFormat.parse(start_day));
@@ -421,4 +419,15 @@ public class CalendarActivity extends AppCompatActivity {
         materialCalendarView.addDecorators(new ToDayDecorator());
         materialCalendarView.addDecorator(new SundayDecorator());
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent reg_intent=new Intent(getApplicationContext(),MainActivity.class);
+        reg_intent.putExtra("app_user",app_user);
+        setResult(RESULT_OK,reg_intent);
+        finish();
+
+    }
+
 }
